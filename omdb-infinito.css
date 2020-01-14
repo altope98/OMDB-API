@@ -1,0 +1,35 @@
+body {
+    background-image: url("http://yesofcorsa.com/wp-content/uploads/2017/05/Cinema-Wallpaper-Full-HD.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  .buscador {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+  }
+
+  .contenidobusqueda {
+      margin: 1rem auto;
+      display: flex;
+      flex-flow: row nowrap;
+  }
+  #busqueda{
+    border-radius: 6px;
+  }
+  #boton{
+    margin: 0rem 1rem;
+    width: 14rem;
+    border-radius: 6px;
+  }
+
+  .card{
+    border-radius: 15px;
+  }
+
+  .modal-content{
+    border-radius: 15px;
+  }
