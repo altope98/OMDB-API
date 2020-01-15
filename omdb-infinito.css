@@ -19,6 +19,7 @@ body {
   }
   #busqueda{
     border-radius: 6px;
+    border: 1px solid black;
   }
   #boton{
     margin: 0 1rem;
@@ -31,8 +32,46 @@ body {
     border-radius: 15px;
     margin: 1rem auto;
     padding: 1rem;
+    animation-name: animacion;
+    animation-duration: 0.5s;
+  }
+
+  @keyframes animacion {
+    from {transform: scale(0.5); opacity: 0.5;}
+    to {transform: scale(1); opacity: 1;}
+  }
+  .card:hover{
+    transform: scale(0.98);
   }
 
   .modal-content{
+    align-items:center;
     border-radius: 15px;
+    animation-name: animacion;
+    animation-duration: 0.5s;
+  }
+
+  @media (max-width: 500px) {
+    .buscador {
+      flex-flow: row wrap;
+    }
+    .contenidobusqueda {
+      
+      flex-flow: row wrap;
+  }
+  #boton{
+    margin: 0.7rem auto;
+    width: 14rem;
+  }
+  #busqueda{
+    margin: auto 1rem;
+  }
+
+  .modal-content{
+    width: 80%;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  
   }

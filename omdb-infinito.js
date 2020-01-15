@@ -5,7 +5,7 @@ $("#boton").click(function () {
     $("#scrolls").empty();
     $("#scrolls").html('<img src="https://www.cattani.it/wp-content/uploads/2016/08/ajax-loading.gif" alt="loading" />');
     $.ajax({
-        url: 'http://www.omdbapi.com/?s=' + busqueda + '&page=1&apikey=3aa482bb',
+        url: 'https://www.omdbapi.com/?s=' + busqueda + '&page=1&apikey=3aa482bb',
         success: function (response) {
             let listaPeliculas = $("#scrolls");
             $("#scrolls").css({ 'display': 'flex', 'flex-flow': 'row wrap' ,'margin':'auto 0'});
@@ -33,7 +33,7 @@ $(window).scroll(function () {
         page++;
         $("#scrolls").append('<div id="carga"><img src="https://www.cattani.it/wp-content/uploads/2016/08/ajax-loading.gif" alt="loading" /></div>');
         $.ajax({
-            url: 'http://www.omdbapi.com/?s=' + busqueda + '&page=' + page + '&apikey=3aa482bb',
+            url: 'https://www.omdbapi.com/?s=' + busqueda + '&page=' + page + '&apikey=3aa482bb',
             success: function (response) {
                 let listaPeliculas = $("#scrolls");
                 //$("#scrolls").css({ 'display': 'flex', 'flex-flow': 'row wrap;' });
@@ -59,9 +59,8 @@ $(window).scroll(function () {
 function mostrarDetalle() {
     let imdbID = event.target.id;
     $.ajax({
-        url: 'http://www.omdbapi.com/?i=' + imdbID + '&apikey=3aa482bb',
+        url: 'https://www.omdbapi.com/?i=' + imdbID + '&apikey=3aa482bb',
         success: function (response) {
-            $("#detalle").css({ 'display': 'flex' });
             $("#exampleModalLabel").empty();
             $("#exampleModalLabel").append(response.Title + '<br> -' + response.Year + '-');
             $("#exampleModalLabel").css({ 'text-align': 'center' });
