@@ -8,11 +8,12 @@ $("#boton").click(function () {
         url: 'http://www.omdbapi.com/?s=' + busqueda + '&page=1&apikey=3aa482bb',
         success: function (response) {
             let listaPeliculas = $("#scrolls");
-            $("#scrolls").css({ 'display': 'flex', 'flex-flow': 'row wrap', 'align-items': 'center' });
+            $("#scrolls").css({ 'display': 'flex', 'flex-flow': 'row wrap' ,'margin':'auto 0'});
+            //, 'align-items': 'center'
             $('#scrolls').fadeIn(1000).html("");
             $.each(response.Search, function (index, item) {
                 listaPeliculas.append(
-                    '<div class="card p-3" style="width: 18rem; margin: 1rem auto;" id="detalle">' +
+                    '<div class="card" style="width: 18rem;" id="detalle">' +
                     '<img id="' + item.imdbID + '" class="card-img-top "  src="' + item.Poster + '" onclick="mostrarDetalle()">' +
                     '<div class="card-body" >' +
                     '<h3 class="card-title">' + item.Title + ' - ' + item.Year + '</h3> ' +
@@ -39,7 +40,7 @@ $(window).scroll(function () {
                 $.each(response.Search, function (index, item) {
                     $("#carga").fadeIn(1000).remove();
                     listaPeliculas.append(
-                        '<div class="card p-3" style="width: 18rem; margin: 1rem auto;" id="detalle">' +
+                        '<div class="card " style="width: 18rem;" id="detalle">' +
                         '<img id="' + item.imdbID + '" class="card-img-top"  src="' + item.Poster + '" onclick="mostrarDetalle()">' +
                         '<div class="card-body">' +
                         '<h3 class="card-title">' + item.Title + ' - ' + item.Year + '</h3> ' +
@@ -66,7 +67,6 @@ function mostrarDetalle() {
             $("#exampleModalLabel").css({ 'text-align': 'center' });
             $("#imgdetalle").empty();
             $("#imgdetalle").attr("src", response.Poster);
-            $("#imgdetalle").css({ 'height': '450px', });
             $("#director").empty();
             $("#director").append('Director: ' + response.Director);
             $("#genero").empty();
